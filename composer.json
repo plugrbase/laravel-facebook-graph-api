@@ -1,0 +1,57 @@
+{
+    "name": "plugrbase/laravel-facebook-graph-api",
+    "description": "Laravel Wrapper for the Facebook Graph PHP 8 SDK",
+    "keywords": [
+        "plugrbase",
+        "laravel-facebook-graph-api"
+    ],
+    "homepage": "https://github.com/plugrbase/laravel-facebook-graph-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Julien Legrand",
+            "email": "julien@nomala.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "guzzlehttp/oauth-subscriber": "^0.6.0",
+        "joelbutcher/facebook-graph-sdk": "^6.0"
+    },
+    "require-dev": {
+        "nunomaduro/phpinsights": "^2.1",
+        "orchestra/testbench": "^6.24",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Plugrbase\\FacebookGraphApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Plugrbase\\FacebookGraphApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Plugrbase\\FacebookGraphApi\\FacebookGraphApiServiceProvider"
+            ],
+            "aliases": {
+                "TwitterApi": "Plugrbase\\FacebookGraphApi\\FacebookGraphApiFacade"
+            }
+        }
+    }
+}
